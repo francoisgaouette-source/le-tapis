@@ -578,7 +578,7 @@ addEventListener("hashchange", () => route());
   if (r.redirection) return;
   S.session = r.session;
   window.HOLDINGAI_PORTE = Object.assign(window.HOLDINGAI_PORTE || {}, {
-    app: "le-tapis", nomApp: "Le Tapis", personnage: "Marcel",
+    app: "la-donne", nomApp: "La Donne", personnage: "Marcel",
     connecte: !!r.session, prenom: r.session ? r.session.nom : "",
     surDeconnexion: () => { HoldingAI.deconnexion(); location.reload(); },
   });
