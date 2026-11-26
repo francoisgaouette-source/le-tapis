@@ -573,9 +573,16 @@ addEventListener("hashchange", () => route());
   route();
   const jeuxP = chargerJeux().then(() => { const h = location.hash.slice(1); if (!h || h.startsWith("u-")) route(true); });
   let r = { session: null };
-  try { r = await HoldingAI.demarrer({ obligatoire: !!invite }); } catch (e) { r = { session: null, erreur: e }; }
+  // Norme commune HoldingAI : compte obligatoire dans toutes les apps; sans session, la barrière d'Albert (porte.js)
+  try { r = await HoldingAI.demarrer({ obligatoire: true }); } catch (e) { r = { session: null, erreur: e }; }
   if (r.redirection) return;
   S.session = r.session;
+  window.HOLDINGAI_PORTE = Object.assign(window.HOLDINGAI_PORTE || {}, {
+    app: "le-tapis", nomApp: "Le Tapis", personnage: "Marcel",
+    connecte: !!r.session, prenom: r.session ? r.session.nom : "",
+    surDeconnexion: () => { HoldingAI.deconnexion(); location.reload(); },
+  });
+  if (!r.session) { window.HOLDINGAI_PORTE.barriere = true; if (window.HoldingAIPorte) HoldingAIPorte.barriere(); }
   if (r.erreur) toast(erreurTexte(r.erreur));
   await chargerGroupe();
   await jeuxP;
