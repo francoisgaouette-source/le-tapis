@@ -1,5 +1,5 @@
 // La Donne (app.ladonne.ai) : les règles des jeux, le groupe d'amis et les soirées de jeux.
-// Aucune étape de compilation. Données : Supabase (projet La Donne), comptes : HoldingAI (compte.holdingai.app).
+// Aucune étape de compilation. Données : Supabase (projet La Donne), comptes : HoldingAI (compte.letabli.ai).
 // Écrans (adresse après #) :
 //   (vide)            catalogue des jeux          <id du jeu>        fiche, animation, carnet de points
 //   ajouter           ajouter un jeu              modifier-<id>      modifier un jeu qu'on a ajouté
