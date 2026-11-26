@@ -1,4 +1,4 @@
-// Le Tapis : les jeux du catalogue (règles) et leurs animations.
+// La Donne : les jeux du catalogue (règles) et leurs animations.
 // G = fiches de jeux; SCN[id] = étapes [légende, "jetons"] lues par anim.js.
 window.G=[
 {id:'rami',name:'Rami',kind:'Cartes',min:2,max:6,time:'30–60 min',gear:'1 jeu de 52 cartes',score:'high',

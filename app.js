@@ -1,5 +1,5 @@
-// Le Tapis (app.letapis.ai) : les règles des jeux, le groupe d'amis et les soirées de jeux.
-// Aucune étape de compilation. Données : Supabase (projet Le Tapis), comptes : HoldingAI (compte.holdingai.app).
+// La Donne (app.letapis.ai) : les règles des jeux, le groupe d'amis et les soirées de jeux.
+// Aucune étape de compilation. Données : Supabase (projet La Donne), comptes : HoldingAI (compte.holdingai.app).
 // Écrans (adresse après #) :
 //   (vide)            catalogue des jeux          <id du jeu>        fiche, animation, carnet de points
 //   ajouter           ajouter un jeu              modifier-<id>      modifier un jeu qu'on a ajouté
@@ -178,7 +178,7 @@ const ICO = {
   groupe: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><circle cx="17" cy="9" r="2.6"/><path d="M16.5 14.2c2.6.1 4.3 1.8 5 4.8"/></svg>`,
 };
 function coquille() {
-  document.body.insertAdjacentHTML("afterbegin", `<header class="top"><a class="logo" href="#"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="8" fill="#167a52"/><g transform="rotate(-10 16 16)"><rect x="7" y="7" width="13" height="18" rx="2" fill="#fff"/><text x="13.5" y="20" text-anchor="middle" font-size="10" fill="#d7263d">♥</text></g><circle cx="23" cy="22" r="4" fill="#ffcf33"/></svg>Le Tapis</a><span class="grp" id="grpNom"></span><button type="button" class="hai-porte-btn" data-hai-porte aria-label="Mon compte (Albert, HoldingAI)" title="Mon compte"></button></header>`);
+  document.body.insertAdjacentHTML("afterbegin", `<header class="top"><a class="logo" href="#"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="8" fill="#167a52"/><g transform="rotate(-10 16 16)"><rect x="7" y="7" width="13" height="18" rx="2" fill="#fff"/><text x="13.5" y="20" text-anchor="middle" font-size="10" fill="#d7263d">♥</text></g><circle cx="23" cy="22" r="4" fill="#ffcf33"/></svg>La Donne</a><span class="grp" id="grpNom"></span><button type="button" class="hai-porte-btn" data-hai-porte aria-label="Mon compte (Albert, HoldingAI)" title="Mon compte"></button></header>`);
   document.body.insertAdjacentHTML("beforeend", `<nav class="tabs" aria-label="Sections"><a href="#" data-tab="jeux">${ICO.jeux}<span>Jeux</span></a><a href="#soirees" data-tab="soirees"><span class="pt">${ICO.soirees}<i id="badge" hidden></i></span><span>Soirées</span></a><a href="#groupe" data-tab="groupe">${ICO.groupe}<span>Groupe</span></a></nav>`);
 }
 function majOnglets() {
@@ -253,7 +253,7 @@ function fiche(g) { const secs = g.s.map(([t]) => t);
   <p class="note">Les règles varient d'une table à l'autre : entendez‑vous sur les variantes avant de brasser.</p></div></div>`; }
 function formJeu(g) { const r = g ? g.raw : {}; editConfirm = false;
   if (!S.pret) return attendre();
-  if (!S.session) { ecranConnexion("Ajouter un jeu", "Connectez-vous pour partager les règles d'un jeu avec tous les joueurs du Tapis."); return; }
+  if (!S.session) { ecranConnexion("Ajouter un jeu", "Connectez-vous pour partager les règles d'un jeu avec tous les joueurs de La Donne."); return; }
   const f = (id, lab, v, ph, req, n) => `<label for="${id}">${lab}${req ? " *" : ""}</label><input id="${id}" value="${esc(v || "")}" placeholder="${ph}" maxlength="${n}"${req ? " required" : ""}>`;
   const a = (id, lab, v, ph) => `<label for="${id}">${lab}</label><textarea id="${id}" rows="5" placeholder="${ph}" maxlength="4000">${esc(v || "")}</textarea>`;
   app.innerHTML = `<div class="felt band"><div class="in"><a class="back" href="${g ? "#" + g.id : "#"}">← ${g ? "Retour au jeu" : "Tous les jeux"}</a><h1 style="margin-top:6px">${g ? "Modifier le jeu" : "Ajouter un jeu"}</h1><p class="quick">Partagez les règles d'un jeu que vous connaissez. Chaque retour à la ligne devient un paragraphe.</p></div></div>
@@ -267,7 +267,7 @@ function formJeu(g) { const r = g ? g.raw : {}; editConfirm = false;
   ${f("fa", "Astuce", r.tip, "Un conseil pour bien jouer", 0, 300)}
   <label for="fsc">Carnet de points</label><select id="fsc"><option value=""${!r.score ? " selected" : ""}>Pas de carnet</option><option value="high"${r.score === "high" ? " selected" : ""}>Le plus haut total gagne</option><option value="low"${r.score === "low" ? " selected" : ""}>Le plus bas total gagne</option></select>
   ${f("fau", "Votre prénom (facultatif)", r.author != null ? r.author : (S.session.nom || ""), "Affiché sur la fiche", 0, 40)}
-  <p class="soft" id="fmsg" style="margin-top:14px">Le jeu sera visible par tous les joueurs du Tapis. Vous seul pourrez le modifier.</p>
+  <p class="soft" id="fmsg" style="margin-top:14px">Le jeu sera visible par tous les joueurs de La Donne. Vous seul pourrez le modifier.</p>
   <button class="go big2">${g ? "Enregistrer" : "Ajouter le jeu"}</button></form></div></div>`;
   $("#fn").focus(); }
 async function soumettreJeu() { const v = (id) => document.getElementById(id).value; const old = courant();
@@ -421,7 +421,7 @@ function telechargerIcs(s) {
   const d = new Date(s.data.fixee), f = new Date(d.getTime() + 3 * 3600e3);
   const z = (x) => x.toISOString().replace(/[-:]/g, "").replace(/\.\d+/, "");
   const e = (t) => String(t || "").replace(/[\\;,]/g, (c) => "\\" + c).replace(/\n/g, "\\n");
-  const ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Le Tapis//FR", "BEGIN:VEVENT", "UID:" + s.id + "@letapis.ai", "DTSTAMP:" + z(new Date()), "DTSTART:" + z(d), "DTEND:" + z(f),
+  const ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//La Donne//FR", "BEGIN:VEVENT", "UID:" + s.id + "@letapis.ai", "DTSTAMP:" + z(new Date()), "DTSTART:" + z(d), "DTEND:" + z(f),
     "SUMMARY:" + e(s.data.titre || "Soirée de jeux"), "LOCATION:" + e(s.data.lieu), "DESCRIPTION:" + e(ADRESSE + "#soiree-" + s.id), "BEGIN:VALARM", "TRIGGER:-PT3H", "ACTION:DISPLAY", "DESCRIPTION:Soirée de jeux", "END:VALARM", "END:VEVENT", "END:VCALENDAR"].join("\r\n");
   const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([ics], { type: "text/calendar" })); a.download = "soiree-de-jeux.ics"; a.click();
 }
@@ -429,7 +429,7 @@ function telechargerIcs(s) {
 /* ---------- Écran : groupe ---------- */
 function texteInvitationGroupe(j) {
   const moi = moiJoueur();
-  return `${moi ? moi.data.nom + " t'invite" : "Tu es invité"} dans le groupe « ${S.groupe.data.nom || "de jeu"} » sur Le Tapis, pour organiser nos soirées de jeux. Connecte-toi avec ce numéro de cellulaire : ${ADRESSE}?joueur=${j.id}`;
+  return `${moi ? moi.data.nom + " t'invite" : "Tu es invité"} dans le groupe « ${S.groupe.data.nom || "de jeu"} » sur La Donne, pour organiser nos soirées de jeux. Connecte-toi avec ce numéro de cellulaire : ${ADRESSE}?joueur=${j.id}`;
 }
 function ecranGroupe() {
   if (!S.pret) return attendre();

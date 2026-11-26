@@ -1,8 +1,8 @@
-# Le Tapis (app.letapis.ai)
+# La Donne (anciennement Le Tapis) (app.letapis.ai)
 
 Les règles des jeux de cartes, de dominos, de dés et de société, expliquées en deux minutes et en animation. Puis on invite les amis et on fixe la soirée de jeux.
 
-App installable (iPhone, Android, ordinateur), en français. Une app de la famille HoldingAI; personnage : **Marcel**.
+App installable (iPhone, Android, ordinateur), en français. Une app de la famille HoldingAI; personnage : **Marcel**. « C'est à qui la donne ? » : le moment où la partie commence.
 
 ## Ce que fait l'app
 
