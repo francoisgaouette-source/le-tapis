@@ -454,7 +454,7 @@ function ecranGroupe() {
     ${orga && j.id !== moi && j.id !== S.groupe.owner ? `<button class="btn sm danger" data-act="retirer" data-id="${esc(j.id)}" aria-label="Retirer ${esc(j.data.nom)}">×</button>` : ""}</span></div>`).join("")}</div></section>
   <form class="sec form edit" id="fmoi"><h2>Votre nom dans le groupe</h2><div class="row"><input id="mn" maxlength="30" value="${esc((moiJoueur() || { data: {} }).data.nom || "")}" aria-label="Votre prénom"><button>Enregistrer</button></div><p></p></form>
   ${autres.length ? `<section class="sec"><h2>Vos autres groupes</h2><div class="people">${autres.map((c) => `<div class="person"><span class="ini">${esc(initiales((c.groupe || {}).nom))}</span><span class="nm"><b>${esc((c.groupe || {}).nom || "Groupe")}</b></span><span class="act"><button class="btn sm go" data-act="relier" data-id="${esc(c.player_id)}">Ouvrir</button></span></div>`).join("")}</div></section>` : ""}
-  <p><button class="btn ghost" data-act="nouveau-groupe">Créer un autre groupe</button></p>
+  <p><button class="btn ghost" data-act="nouveau-groupe">Créer un autre groupe</button> <button class="btn ghost" type="button" data-hai-inviter>Inviter quelqu'un</button></p>
   <p class="note">Connecté avec le ${esc(telAffiche(S.session.phone))}. Pour changer de compte, touchez le bouton d'Albert en haut à droite.</p>
   </div></div>`;
   S.nouveauJoueur = null;
