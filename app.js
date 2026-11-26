@@ -1,4 +1,4 @@
-// La Donne (app.letapis.ai) : les règles des jeux, le groupe d'amis et les soirées de jeux.
+// La Donne (app.ladonne.ai) : les règles des jeux, le groupe d'amis et les soirées de jeux.
 // Aucune étape de compilation. Données : Supabase (projet La Donne), comptes : HoldingAI (compte.holdingai.app).
 // Écrans (adresse après #) :
 //   (vide)            catalogue des jeux          <id du jeu>        fiche, animation, carnet de points
@@ -421,7 +421,7 @@ function telechargerIcs(s) {
   const d = new Date(s.data.fixee), f = new Date(d.getTime() + 3 * 3600e3);
   const z = (x) => x.toISOString().replace(/[-:]/g, "").replace(/\.\d+/, "");
   const e = (t) => String(t || "").replace(/[\\;,]/g, (c) => "\\" + c).replace(/\n/g, "\\n");
-  const ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//La Donne//FR", "BEGIN:VEVENT", "UID:" + s.id + "@letapis.ai", "DTSTAMP:" + z(new Date()), "DTSTART:" + z(d), "DTEND:" + z(f),
+  const ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//La Donne//FR", "BEGIN:VEVENT", "UID:" + s.id + "@ladonne.ai", "DTSTAMP:" + z(new Date()), "DTSTART:" + z(d), "DTEND:" + z(f),
     "SUMMARY:" + e(s.data.titre || "Soirée de jeux"), "LOCATION:" + e(s.data.lieu), "DESCRIPTION:" + e(ADRESSE + "#soiree-" + s.id), "BEGIN:VALARM", "TRIGGER:-PT3H", "ACTION:DISPLAY", "DESCRIPTION:Soirée de jeux", "END:VALARM", "END:VEVENT", "END:VCALENDAR"].join("\r\n");
   const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([ics], { type: "text/calendar" })); a.download = "soiree-de-jeux.ics"; a.click();
 }

@@ -1,4 +1,4 @@
-// Réglages publics de La Donne (app.letapis.ai).
+// Réglages publics de La Donne (app.ladonne.ai).
 // Projet Supabase « Le Tapis ». La clé publique peut être dans le code : la sécurité vient des règles de la base.
 window.APP_CONFIG = {
   supabaseUrl: "https://uwfnwnreohdyaxainvna.supabase.co",
@@ -7,6 +7,6 @@ window.APP_CONFIG = {
   HOLDINGAI: {
     clientId: "4975cad2-7ada-4ecc-982a-cbbcd2ee4a3f",
     app: "la-donne",
-    retour: "https://app.letapis.ai/"
+    retour: "https://app.ladonne.ai/"
   }
 };

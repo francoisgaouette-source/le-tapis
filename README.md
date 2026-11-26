@@ -1,4 +1,4 @@
-# La Donne (anciennement Le Tapis) (app.letapis.ai)
+# La Donne (anciennement Le Tapis) (app.ladonne.ai)
 
 Les règles des jeux de cartes, de dominos, de dés et de société, expliquées en deux minutes et en animation. Puis on invite les amis et on fixe la soirée de jeux.
 
@@ -15,7 +15,7 @@ App installable (iPhone, Android, ordinateur), en français. Une app de la famil
 
 | Morceau | Où | Remarque |
 |---|---|---|
-| App (fichiers à la racine) | GitHub Pages, domaine `app.letapis.ai` (`CNAME`) | aucune étape de compilation; pousser sur `main` met en ligne |
+| App (fichiers à la racine) | GitHub Pages, domaine `app.ladonne.ai` (`CNAME`; anciennement app.letapis.ai) | aucune étape de compilation; pousser sur `main` met en ligne |
 | Règles et animations | `jeux.js` | `G` = fiches, `SCN` = étapes d'animation |
 | Base de données | Supabase, projet **Le Tapis** (`uwfnwnreohdyaxainvna`) | tables `groupes`, `joueurs`, `telephones`, `liens`, `soirees`, `jeux`; règles RLS + fonctions `creer_groupe`, `relier_joueur`, `mes_groupes`, `soiree_maj`… |
 | Comptes | Supabase, projet **HoldingAI Compte** (`wwakxuzuhmdmweluafiz`), client OAuth « Le Tapis » | `holdingai.js` (identique dans toutes les apps); Le Tapis accepte ses jetons (Third-Party Auth > Custom OIDC) |
@@ -24,8 +24,8 @@ Un joueur est reconnu par le cellulaire de son compte HoldingAI : `mes_groupes()
 
 ## Mise en ligne
 
-1. **Domaine** : acheter `letapis.ai`, puis chez le registraire ajouter un enregistrement DNS `CNAME app → francoisgaouette-source.github.io`.
-2. **GitHub** : dépôt `le-tapis` > Settings > Pages > Source : `main`, dossier `/` (racine). Le domaine personnalisé `app.letapis.ai` vient du fichier `CNAME`. Cocher « Enforce HTTPS » quand GitHub l'offre.
+1. **Domaine** : `ladonne.ai` (Cloudflare, acheté le 2026-11-26) : enregistrement DNS `CNAME app → francoisgaouette-source.github.io`, en « DNS only » (nuage gris) pour que GitHub émette le certificat.
+2. **GitHub** : dépôt `le-tapis` > Settings > Pages > Source : `main`, dossier `/` (racine). Le domaine personnalisé `app.ladonne.ai` vient du fichier `CNAME`. Cocher « Enforce HTTPS » quand GitHub l'offre.
 3. Installer sur le téléphone : Safari > Partager > **Sur l'écran d'accueil** (iPhone); Chrome > ⋮ > **Installer l'application** (Android).
 
 ## À faire ensuite
