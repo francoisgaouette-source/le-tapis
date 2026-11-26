@@ -178,7 +178,7 @@ const ICO = {
   groupe: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><circle cx="17" cy="9" r="2.6"/><path d="M16.5 14.2c2.6.1 4.3 1.8 5 4.8"/></svg>`,
 };
 function coquille() {
-  document.body.insertAdjacentHTML("afterbegin", `<header class="top"><a class="logo" href="#"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="8" fill="#167a52"/><g transform="rotate(-10 16 16)"><rect x="7" y="7" width="13" height="18" rx="2" fill="#fff"/><text x="13.5" y="20" text-anchor="middle" font-size="10" fill="#d7263d">♥</text></g><circle cx="23" cy="22" r="4" fill="#ffcf33"/></svg>La Donne</a><span class="grp" id="grpNom"></span><button type="button" class="hai-porte-btn" data-hai-porte aria-label="Mon compte (Albert, HoldingAI)" title="Mon compte"></button></header>`);
+  document.body.insertAdjacentHTML("afterbegin", `<header class="top"><a class="logo" href="#"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="8" fill="#167a52"/><g transform="rotate(-10 16 16)"><rect x="7" y="7" width="13" height="18" rx="2" fill="#fff"/><text x="13.5" y="20" text-anchor="middle" font-size="10" fill="#d7263d">♥</text></g><circle cx="23" cy="22" r="4" fill="#ffcf33"/></svg>La Donne</a><span class="grp" id="grpNom"></span><button type="button" class="hai-porte-btn" data-hai-porte aria-label="Mon compte (Albert, L’Établi)" title="Mon compte"></button></header>`);
   document.body.insertAdjacentHTML("beforeend", `<nav class="tabs" aria-label="Sections"><a href="#" data-tab="jeux">${ICO.jeux}<span>Jeux</span></a><a href="#soirees" data-tab="soirees"><span class="pt">${ICO.soirees}<i id="badge" hidden></i></span><span>Soirées</span></a><a href="#groupe" data-tab="groupe">${ICO.groupe}<span>Groupe</span></a></nav>`);
 }
 function majOnglets() {
@@ -193,9 +193,9 @@ function majOnglets() {
 /* ---------- Écran : connexion requise ---------- */
 function ecranConnexion(titre, texte) {
   app.innerHTML = `<div class="felt band"><div class="in"><h1>${esc(titre)}</h1><p class="lede">${esc(texte)}</p></div></div>
-  <div class="band"><div class="in"><div class="sec"><h2>Un seul compte pour toutes les apps HoldingAI</h2>
+  <div class="band"><div class="in"><div class="sec"><h2>Un seul compte pour toutes les apps de L’Établi</h2>
   <p>On se connecte avec son cellulaire. Si un ami vous a ajouté à son groupe, utilisez le même numéro : vous arriverez directement dans son groupe.</p>
-  <button class="btn go wide" data-act="connecter" style="margin:6px 0 14px">Continuer avec HoldingAI</button></div>
+  <button class="btn go wide" data-act="connecter" style="margin:6px 0 14px">Continuer avec L’Établi</button></div>
   <p class="note">Les règles des jeux restent ouvertes à tous, sans compte.</p></div></div>`;
 }
 const attendre = () => { app.innerHTML = `<div class="spin">Chargement…</div>`; };
