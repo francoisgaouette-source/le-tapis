@@ -17,7 +17,7 @@ App installable (iPhone, Android, ordinateur), en français. Une app de la famil
 |---|---|---|
 | App (fichiers à la racine) | GitHub Pages, domaine `app.ladonne.ai` (`CNAME`; anciennement app.letapis.ai) | aucune étape de compilation; pousser sur `main` met en ligne |
 | Règles et animations | `jeux.js` | `G` = fiches, `SCN` = étapes d'animation |
-| Base de données | Supabase, projet **Le Tapis** (`uwfnwnreohdyaxainvna`) | tables `groupes`, `joueurs`, `telephones`, `liens`, `soirees`, `jeux`; règles RLS + fonctions `creer_groupe`, `relier_joueur`, `mes_groupes`, `soiree_maj`… |
+| Base de données | Supabase, projet **Le Tapis** (`uwfnwnreohdyaxainvna`) | tables `groupes`, `joueurs`, `telephones`, `liens`, `soirees`, `jeux`; règles RLS + fonctions `creer_groupe`, `relier_joueur`, `mes_groupes`, `soiree_maj`…; structure complète dans `supabase/schema.sql` |
 | Comptes | Supabase, projet **HoldingAI Compte** (`wwakxuzuhmdmweluafiz`), client OAuth « Le Tapis » | `holdingai.js` (identique dans toutes les apps); Le Tapis accepte ses jetons (Third-Party Auth > Custom OIDC) |
 
 Un joueur est reconnu par le cellulaire de son compte HoldingAI : `mes_groupes()` trouve les groupes où ce numéro est inscrit, `relier_joueur()` l'y relie.
