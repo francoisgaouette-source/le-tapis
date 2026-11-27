@@ -2,7 +2,7 @@
 
 Les règles des jeux de cartes, de dominos, de dés et de société, expliquées en deux minutes et en animation. Puis on invite les amis et on fixe la soirée de jeux.
 
-App installable (iPhone, Android, ordinateur), en français. Une app de la famille HoldingAI; personnage : **Marcel**. « C'est à qui la donne ? » : le moment où la partie commence.
+App installable (iPhone, Android, ordinateur), en français. Une app de la famille HoldingAI; personnage : **Maxence**. « C'est à qui la donne ? » : le moment où la partie commence.
 
 ## Ce que fait l'app
 
@@ -31,4 +31,4 @@ Un joueur est reconnu par le cellulaire de son compte HoldingAI : `mes_groupes()
 ## À faire ensuite
 
 - Notifications quand une soirée est proposée ou qu'une date est choisie.
-- Marcel qui répond aux questions de règles pendant la partie.
+- Maxence qui répond aux questions de règles pendant la partie.

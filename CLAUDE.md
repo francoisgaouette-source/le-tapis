@@ -1,6 +1,6 @@
 # La Donne — consignes pour Claude Code
 
-La Donne (app.ladonne.ai) : les règles des jeux de cartes, de dominos, de dés et de société, expliquées en deux minutes et en animation, puis on invite les amis et on fixe la soirée de jeux. Personnage : **Marcel**.
+La Donne (app.ladonne.ai) : les règles des jeux de cartes, de dominos, de dés et de société, expliquées en deux minutes et en animation, puis on invite les amis et on fixe la soirée de jeux. Personnage : **Maxence**.
 
 Le dépôt s'appelle `le-tapis`, et le projet Supabase « Le Tapis » (`uwfnwnreohdyaxainvna`) : ce sont des noms techniques. Le nom de l'app est **La Donne**, jamais « Le Tapis » dans ce que les gens voient.
 
