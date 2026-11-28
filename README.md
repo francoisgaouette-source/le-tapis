@@ -25,8 +25,9 @@ Un joueur est reconnu par le cellulaire de son compte HoldingAI : `mes_groupes()
 ## Mise en ligne
 
 1. **Domaine** : `ladonne.ai` (Cloudflare, acheté le 2026-11-26) : enregistrement DNS `CNAME app → francoisgaouette-source.github.io`, en « DNS only » (nuage gris) pour que GitHub émette le certificat.
-2. **GitHub** : dépôt `le-tapis` > Settings > Pages > Source : `main`, dossier `/` (racine). Le domaine personnalisé `app.ladonne.ai` vient du fichier `CNAME`. Cocher « Enforce HTTPS » quand GitHub l'offre.
-3. Installer sur le téléphone : Safari > Partager > **Sur l'écran d'accueil** (iPhone); Chrome > ⋮ > **Installer l'application** (Android).
+2. **GitHub** : dépôt `la-donne` (autrefois `le-tapis`) > Settings > Pages > Source : `main`, dossier `/` (racine). Le domaine personnalisé `app.ladonne.ai` vient du fichier `CNAME`. Cocher « Enforce HTTPS » quand GitHub l'offre.
+3. **Le site** (`ladonne.ai`) : la page de présentation est dans `site/`, au gabarit commun des sites de L'Établi. Elle se publie à part sur Cloudflare avec `npx wrangler deploy -c wrangler.site.jsonc` (www renvoie vers ladonne.ai).
+4. Installer sur le téléphone : Safari > Partager > **Sur l'écran d'accueil** (iPhone); Chrome > ⋮ > **Installer l'application** (Android).
 
 ## À faire ensuite
 

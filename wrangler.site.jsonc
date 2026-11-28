@@ -1,0 +1,13 @@
+// Cloudflare (ladonne.ai) : le site de La Donne, dossier site/ (l’app reste sur app.ladonne.ai, servie par GitHub Pages).
+// Mise en ligne : npx wrangler deploy -c wrangler.site.jsonc
+// La première mise en ligne relie ladonne.ai et www.ladonne.ai à ce site dans Cloudflare.
+{
+  "name": "ladonne-site",
+  "compatibility_date": "2026-10-23",
+  "main": "./site/_worker.js",
+  "assets": { "directory": "./site", "binding": "ASSETS", "run_worker_first": true },
+  "routes": [
+    { "pattern": "ladonne.ai", "custom_domain": true },
+    { "pattern": "www.ladonne.ai", "custom_domain": true }
+  ]
+}

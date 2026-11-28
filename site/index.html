@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Donne · les règles en deux minutes, la soirée en prime</title>
+<meta name="description" content="Les règles des jeux de cartes, de dominos, de dés et de société, expliquées en deux minutes et en animation. Puis on invite les amis et on fixe la soirée de jeux.">
+<meta property="og:title" content="La Donne · les règles en deux minutes, la soirée en prime">
+<meta property="og:description" content="27 jeux expliqués en animation, et les soirées de jeux entre amis.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* La Donne : jetons du livre de marque de L’Établi (bleu roi, rouge cœur, fond crème) */
+:root {
+  --fond: #FAF6EF; --carte: #FFFFFF; --filet: #E6DED2; --encre: #1D1B18; --encre-douce: #6B665E;
+  --marque: #2A48A0; --marque-fonce: #203A84; --accent: #C8343A; --douce: #E1E5F2; --sur-marque: #FFFFFF;
+  --titre: Outfit, system-ui, sans-serif;
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --mono: 'DM Mono', ui-monospace, Menlo, monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--fond); color: var(--encre); font: 17px/1.55 var(--sans); }
+a { color: var(--marque); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+section { padding: 88px 0; }
+h1, h2, h3 { font-family: var(--titre); font-weight: 700; margin: 0; }
+h2 { font-size: clamp(34px, 5vw, 52px); line-height: 1.04; letter-spacing: -.01em; margin-bottom: 16px; }
+.intro { font-size: 20px; color: var(--encre-douce); max-width: 36em; margin: 0 0 40px; }
+.btn { display: inline-flex; align-items: center; min-height: 50px; padding: 0 24px; border-radius: 999px; font-weight: 600; font-size: 18px; text-decoration: none; }
+.btn.main { background: var(--marque); color: var(--sur-marque); }
+.btn.main:hover { background: var(--marque-fonce); }
+
+/* 1. Menu */
+.entete { background: var(--carte); border-bottom: 1px solid var(--filet); position: sticky; top: 0; z-index: 5; }
+.entete .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 68px; }
+.marque { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--encre); font: 700 24px var(--titre); }
+.marque img { width: 34px; height: 34px; }
+.nav { display: flex; align-items: center; gap: 24px; }
+.nav a { color: var(--encre); text-decoration: none; font-weight: 500; white-space: nowrap; }
+.nav a:hover { color: var(--marque); }
+.nav .login { color: var(--encre-douce); }
+.nav .try { background: var(--marque); color: var(--sur-marque); padding: 8px 18px; border-radius: 999px; font-weight: 600; }
+.nav .try:hover { color: var(--sur-marque); background: var(--marque-fonce); }
+@media (max-width: 820px) { .nav a.lien { display: none; } .nav { gap: 14px; } }
+@media (max-width: 480px) { .entete .wrap { padding: 0 16px; gap: 10px; } .marque { font-size: 20px; gap: 8px; } .marque img { width: 28px; height: 28px; } .nav { gap: 10px; } .nav a { font-size: 15px; } .nav .try { padding: 7px 12px; } }
+
+/* 2. Accueil */
+.accueil { padding: 64px 0 72px; }
+.accueil .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+.accueil h1 { font-size: clamp(44px, 6.6vw, 80px); line-height: .98; letter-spacing: -.02em; margin-bottom: 20px; }
+.accueil h1 em { font-style: normal; color: var(--marque); }
+.accueil .lead { font-size: 21px; color: var(--encre-douce); margin: 0 0 28px; max-width: 32em; }
+.accueil .petit { font-size: 15px; color: var(--encre-douce); margin: 18px 0 0; }
+@media (max-width: 860px) { .accueil .wrap { grid-template-columns: 1fr; } }
+
+/* Maquettes de l’app */
+.tel { width: 320px; max-width: 100%; margin: 0 auto; background: var(--fond); color: var(--encre); border: 10px solid #1D1B18; border-radius: 36px; padding: 18px 16px; display: grid; gap: 12px; box-shadow: 0 24px 48px rgba(0,0,0,.14); }
+.tel .t-nom { font: 700 22px var(--titre); color: var(--marque); }
+.tel .t-carte { background: var(--carte); border: 1px solid var(--filet); border-radius: 12px; padding: 12px; }
+.tel .t-douce { background: var(--douce); border: 0; }
+.tel .t-lbl { font-size: 12px; color: var(--encre-douce); }
+.tel .t-titre { font: 700 20px var(--titre); margin: 2px 0 6px; }
+.tel .t-etape { display: flex; gap: 8px; font-size: 14px; padding: 5px 0; border-top: 1px solid var(--filet); }
+.tel .t-etape:first-of-type { border-top: 0; }
+.tel .t-etape b { flex: none; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: var(--marque); color: var(--sur-marque); font: 600 12px var(--sans); }
+.tel .t-ligne { display: flex; justify-content: space-between; font-size: 14px; padding: 6px 0; border-top: 1px solid var(--filet); }
+.tel .t-ligne:first-of-type { border-top: 0; }
+.tel .t-pastille { border: 1.5px solid var(--accent); color: var(--accent); border-radius: 999px; padding: 0 8px; font-size: 12px; font-weight: 600; }
+.tel .t-bulle { background: var(--douce); border-radius: 16px 16px 4px 16px; padding: 10px 12px; font-size: 14px; box-shadow: 0 6px 24px rgba(0,0,0,.14); }
+.tel .t-bulle b { display: block; font-size: 12px; }
+
+/* 3. Le problème */
+.probleme { background: var(--carte); }
+
+/* 4. Comment ça marche */
+.trois { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.trois li { background: var(--carte); border: 1px solid var(--filet); border-radius: 12px; padding: 24px; }
+.trois b { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--marque); color: var(--sur-marque); font: 700 20px var(--titre); margin-bottom: 14px; }
+.trois h3 { font-size: 24px; margin-bottom: 6px; }
+.trois p { margin: 0; color: var(--encre-douce); }
+@media (max-width: 760px) { .trois { grid-template-columns: 1fr; } }
+
+/* 5. L’app */
+.app { background: var(--marque); color: #E6EBF8; }
+.app h2 { color: var(--sur-marque); }
+.app .intro { color: #C9D3F0; }
+.app .wrap { display: grid; grid-template-columns: 1fr 340px; gap: 56px; align-items: center; }
+.app ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+.app li { padding-left: 34px; position: relative; }
+.app li::before { content: '♥'; position: absolute; left: 0; top: 0; color: #F2A3A6; font-size: 18px; }
+.app li b { display: block; color: var(--sur-marque); font-size: 19px; }
+@media (max-width: 860px) { .app .wrap { grid-template-columns: 1fr; } }
+
+/* Section propre à La Donne : les jeux */
+.familles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.famille { background: var(--carte); border: 1px solid var(--filet); border-radius: 12px; padding: 22px; }
+.famille h3 { font-size: 24px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.famille h3 span { font: 500 15px var(--mono); color: var(--encre-douce); }
+.famille p { margin: 0; color: var(--encre-douce); }
+@media (max-width: 700px) { .familles { grid-template-columns: 1fr; } }
+
+/* 6. Le personnage */
+.personnage { background: var(--carte); }
+.personnage .wrap { display: grid; grid-template-columns: 96px 1fr; gap: 32px; align-items: start; }
+.portrait { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; border: 3px solid var(--douce); background: var(--douce); }
+.bulle { display: inline-block; background: var(--douce); border-radius: 16px 16px 16px 4px; padding: 12px 18px; box-shadow: 0 6px 24px rgba(0,0,0,.14); }
+.bulle .qui { font-size: 13px; font-weight: 600; }
+.bulle p { margin: 2px 0 0; }
+@media (max-width: 600px) { .personnage .wrap { grid-template-columns: 1fr; gap: 16px; } }
+
+/* 7. Confiance */
+.checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; max-width: 46em; }
+.checks li { padding-left: 32px; position: relative; }
+.checks li::before { content: '✓'; position: absolute; left: 0; color: var(--marque); font-weight: 700; }
+
+/* 8. Prix */
+.prix { background: var(--carte); }
+.gratuit { font: 800 clamp(40px, 6vw, 64px)/1 var(--titre); color: var(--marque); margin: 0 0 12px; }
+.prix ul { margin: 0 0 28px; padding-left: 20px; }
+
+/* 9. Questions */
+.faq details { border-bottom: 1px solid var(--filet); padding: 16px 0; max-width: 820px; }
+.faq summary { cursor: pointer; font-weight: 600; font-size: 19px; }
+.faq details p { margin: 10px 0 0; color: var(--encre-douce); }
+
+/* 10. Dernier appel */
+.appel { background: var(--douce); padding: 72px 0; }
+.appel .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+.appel h2 { margin: 0; }
+.appel-qui { display: flex; align-items: center; gap: 10px; margin: 14px 0 0; font-size: 18px; }
+.appel-qui img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+
+/* 11. Pied de page commun */
+.pied { background: var(--carte); border-top: 1px solid var(--filet); padding: 40px 0; font-size: 16px; }
+.pied .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; }
+.signature { display: flex; align-items: center; gap: 12px; }
+.signature img { width: 36px; height: 36px; }
+.sig-nom { font: 700 22px var(--titre); line-height: 1.1; }
+.sig-etabli { display: flex; align-items: center; gap: 5px; margin-top: 4px; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--encre-douce); }
+.liens { display: flex; gap: 24px; flex-wrap: wrap; }
+.liens a { color: var(--encre); }
+.copy { flex-basis: 100%; font-size: 14px; color: var(--encre-douce); }
+</style>
+</head>
+<body>
+
+<header id="entete" class="entete">
+  <div class="wrap">
+    <a class="marque" href="#"><img src="symbole.svg" alt="">La Donne</a>
+    <nav class="nav" aria-label="Sections">
+      <a class="lien" href="#comment">Comment ça marche</a>
+      <a class="lien" href="#personnage">Maxence</a>
+      <a class="lien" href="#prix">Prix</a>
+      <a class="lien" href="#questions">Questions</a>
+      <a class="login" href="https://app.ladonne.ai/">Se connecter</a>
+      <a class="try" href="https://app.ladonne.ai/">Commencer</a>
+    </nav>
+  </div>
+</header>
+
+<section id="accueil" class="accueil">
+  <div class="wrap">
+    <div>
+      <h1>Les règles en deux minutes, <em>la soirée en prime.</em></h1>
+      <p class="lead">Les règles des jeux de cartes, de dominos, de dés et de société, expliquées en animation, étape par étape. Puis tu invites tes amis et vous fixez la soirée de jeux.</p>
+      <a class="btn main" href="https://app.ladonne.ai/">Commencer</a>
+      <p class="petit">Les règles sont ouvertes à tous, sans compte. Sur téléphone et ordinateur. Fait au Québec, en français.</p>
+    </div>
+    <div class="tel" role="img" aria-label="La fiche du Uno dans La Donne : l’animation des règles, étape par étape, et une bulle de Maxence.">
+      <div class="t-nom" aria-hidden="true">Uno</div>
+      <div class="t-carte t-douce" aria-hidden="true">
+        <div class="t-lbl">Cartes · 2 à 10 joueurs</div>
+        <div class="t-titre">À ton tour</div>
+        <div class="t-etape"><b>1</b><span>Pose une carte de même couleur, de même chiffre ou de même symbole.</span></div>
+        <div class="t-etape"><b>2</b><span>Rien à jouer ? Pige une carte.</span></div>
+      </div>
+      <div class="t-carte" aria-hidden="true">
+        <div class="t-lbl">Les cartes spéciales</div>
+        <div class="t-ligne"><span>+2</span><span>Le suivant pige 2 cartes</span></div>
+        <div class="t-ligne"><span>Inversion</span><span>On change de sens</span></div>
+        <div class="t-ligne"><span>Joker</span><span>Tu choisis la couleur</span></div>
+      </div>
+      <div class="t-bulle" aria-hidden="true"><b>Maxence · La Donne</b>Au Uno, quand il te reste une carte, tu dois dire « Uno ».</div>
+    </div>
+  </div>
+</section>
+
+<section id="probleme" class="probleme">
+  <div class="wrap">
+    <h2>« Attends, c’est quoi la règle déjà ? »</h2>
+    <p class="intro">La boîte est ouverte, les amis sont arrivés, et quelqu’un lit le livret à voix haute pendant vingt minutes. Ou bien chacun se souvient d’une règle différente. Puis il faut encore trouver un soir où tout le monde est libre.</p>
+  </div>
+</section>
+
+<section id="comment" class="comment">
+  <div class="wrap">
+    <h2>Comment ça marche</h2>
+    <p class="intro">Deux minutes pour comprendre un jeu, deux minutes pour organiser la soirée.</p>
+    <ol class="trois">
+      <li><b>1</b><h3>Choisis un jeu</h3><p>Chaque jeu a son animation pas à pas, ses règles en sections courtes et une astuce.</p></li>
+      <li><b>2</b><h3>Invite tes amis</h3><p>Crée ton groupe, ajoute tes amis par prénom et cellulaire : l’invitation part par texto.</p></li>
+      <li><b>3</b><h3>Fixe la soirée</h3><p>Propose une ou plusieurs dates. Chacun répond oui, peut-être ou non, et tu choisis la date.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="app" class="app">
+  <div class="wrap">
+    <div>
+      <h2>De la règle à la table</h2>
+      <p class="intro">Tout ce qu’il faut pour apprendre un jeu et réunir les joueurs, au même endroit.</p>
+      <ul>
+        <li><b>Les règles en animation</b>Étape par étape, avec la mise en place, les tours et la fin de la partie.</li>
+        <li><b>Un carnet de points</b>Pour compter la partie, gardé sur ton téléphone.</li>
+        <li><b>Les réponses en direct</b>Oui, peut-être ou non pour chaque date, et une relance par texto à ceux qui n’ont pas répondu.</li>
+        <li><b>Les jeux qui vont avec la soirée</b>Selon le nombre de « oui », l’app montre les jeux qu’on peut jouer. Puis on ajoute la soirée au calendrier.</li>
+      </ul>
+    </div>
+    <div class="tel" role="img" aria-label="Une soirée dans La Donne : deux dates proposées, les réponses des amis et les jeux possibles.">
+      <div class="t-carte" aria-hidden="true">
+        <div class="t-lbl">Soirée de jeux · chez Julie</div>
+        <div class="t-ligne"><span>Vendredi 19 h</span><span>5 oui · 1 peut-être</span></div>
+        <div class="t-ligne"><span>Samedi 19 h</span><span>3 oui</span></div>
+        <div class="t-ligne"><span>Date choisie</span><span class="t-pastille">Vendredi</span></div>
+      </div>
+      <div class="t-carte" aria-hidden="true">
+        <div class="t-lbl">Jeux possibles à 5</div>
+        <div class="t-ligne"><span>Rami</span><span>2 à 6 joueurs</span></div>
+        <div class="t-ligne"><span>Petit train mexicain</span><span>dominos</span></div>
+      </div>
+      <div class="t-bulle" aria-hidden="true"><b>Maxence · La Donne</b>Vendredi chez Julie : 5 joueurs.</div>
+    </div>
+  </div>
+</section>
+
+<section id="jeux" class="jeux">
+  <div class="wrap">
+    <h2>27 jeux, et les tiens</h2>
+    <p class="intro">Des classiques de la table de cuisine aux jeux de société d’aujourd’hui. Et toute personne connectée peut partager les règles d’un jeu qui manque.</p>
+    <div class="familles">
+      <div class="famille"><h3>Cartes <span>14 jeux</span></h3><p>Rami, Dame de pique, Huit américain, Cribbage, Uno, Canasta, Président, Skip‑Bo, 5 Crowns…</p></div>
+      <div class="famille"><h3>Société <span>10 jeux</span></h3><p>Azul, Heat, Sky Team, 7 Wonders Duel, Dorfromantik, Trio, The Gang…</p></div>
+      <div class="famille"><h3>Dominos <span>2 jeux</span></h3><p>Petit train mexicain et dominos classiques.</p></div>
+      <div class="famille"><h3>Dés <span>1 jeu</span></h3><p>Yahtzee (Yum).</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="personnage" class="personnage">
+  <div class="wrap">
+    <img class="portrait" src="https://compte.letabli.ai/personnages/maxence.webp" alt="Maxence" width="96" height="96" loading="lazy">
+    <div>
+      <h2>Maxence, l’oncle qui connaît tous les jeux</h2>
+      <p class="intro">Joueur, taquin et bon perdant, Maxence connaît les règles de tous les jeux et rassemble tout le monde autour de la table. Dans La Donne, il t’explique chaque jeu sans jargon, une étape à la fois.</p>
+      <div class="bulle"><div class="qui">Maxence · La Donne</div><p>Au Uno, quand il te reste une carte, tu dois dire « Uno ».</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="confiance" class="confiance">
+  <div class="wrap">
+    <h2>Tes données restent à toi</h2>
+    <p class="intro">La Donne sert à jouer. Elle ne fait rien d’autre avec ce que tu y mets.</p>
+    <ul class="checks">
+      <li>Les règles sont ouvertes à tous : pas besoin de compte pour les lire.</li>
+      <li>Ton carnet de points reste sur ton téléphone.</li>
+      <li>Les amis, les soirées et les réponses de ton groupe ne sont visibles que par les membres du groupe.</li>
+      <li>Les règles que tu partages, toi seul peux les modifier ou les supprimer.</li>
+      <li>Un seul compte pour toutes les apps de L’Établi.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="prix" class="prix">
+  <div class="wrap">
+    <h2>Combien ça coûte ?</h2>
+    <p class="gratuit">Gratuit.</p>
+    <ul>
+      <li>Les 27 jeux, leurs animations et le carnet de points</li>
+      <li>Ton groupe d’amis et les soirées de jeux</li>
+      <li>Les règles partagées par les autres joueurs</li>
+    </ul>
+    <a class="btn main" href="https://app.ladonne.ai/">Commencer</a>
+  </div>
+</section>
+
+<section id="questions" class="faq">
+  <div class="wrap">
+    <h2>Questions</h2>
+    <details><summary>Faut-il un compte ?</summary><p>Pas pour lire les règles : elles sont ouvertes à tous. Le compte sert à créer ton groupe, inviter tes amis, organiser les soirées et partager des règles.</p></details>
+    <details><summary>Faut-il télécharger une app ?</summary><p>Non. Ouvre <a href="https://app.ladonne.ai/">app.ladonne.ai</a> sur ton téléphone, puis ajoute La Donne à ton écran d’accueil (sur iPhone : Safari, bouton Partager, puis « Sur l’écran d’accueil » ; sur Android : Chrome, menu ⋮, puis « Installer l’application »).</p></details>
+    <details><summary>Comment mes amis rejoignent-ils le groupe ?</summary><p>Tu les ajoutes par prénom et cellulaire, puis tu leur envoies l’invitation par texto. Ils se connectent avec ce même cellulaire et arrivent directement dans le groupe.</p></details>
+    <details><summary>Mon jeu n’est pas dans la liste.</summary><p>Connecte-toi et partage ses règles : elles seront visibles par tous. Toi seul peux les modifier ou les supprimer.</p></details>
+    <details><summary>Comment on choisit la date de la soirée ?</summary><p>Propose une ou plusieurs dates, un lieu, un nombre de places et les jeux au programme. Chacun répond oui, peut-être ou non pour chaque date, puis l’organisateur choisit. On peut relancer par texto ceux qui n’ont pas répondu et ajouter la soirée au calendrier.</p></details>
+    <details><summary>Où est gardé mon carnet de points ?</summary><p>Sur ton téléphone. Il n’est pas envoyé ailleurs.</p></details>
+  </div>
+</section>
+
+<section id="appel" class="appel">
+  <div class="wrap">
+    <div>
+      <h2>C’est à qui la donne ?</h2>
+      <p class="appel-qui"><img src="https://compte.letabli.ai/personnages/maxence.webp" alt="" width="40" height="40" loading="lazy">« Vendredi chez Julie : 5 joueurs. » Maxence</p>
+    </div>
+    <a class="btn main" href="https://app.ladonne.ai/">Commencer</a>
+  </div>
+</section>
+
+<footer id="pied" class="pied">
+  <div class="wrap">
+    <div class="signature">
+      <img src="symbole.svg" alt="">
+      <div><div class="sig-nom">La Donne</div>
+        <div class="sig-etabli"><svg width="12" height="12" viewBox="0 0 64 64" aria-hidden="true"><rect x="40" y="10" width="14" height="10" rx="2" fill="#B8954A"/><rect x="45" y="20" width="4" height="4" fill="#B8954A"/><rect x="4" y="24" width="56" height="9" rx="2.5" fill="currentColor"/><rect x="10" y="33" width="6" height="25" rx="1.5" fill="currentColor"/><rect x="48" y="33" width="6" height="25" rx="1.5" fill="currentColor"/><rect x="16" y="45" width="32" height="4" fill="currentColor"/><rect x="2" y="27" width="5" height="12" rx="1.5" fill="#B8954A"/></svg>Fait à L’Établi</div></div>
+    </div>
+    <div class="liens">
+      <a href="mailto:bonjour@ladonne.ai">Nous écrire</a>
+      <a href="https://letabli.ai/#apps">Les autres apps de L’Établi</a>
+    </div>
+    <div class="copy">© 2026 L’Établi. Fait au Québec.</div>
+  </div>
+</footer>
+
+</body>
+</html>
