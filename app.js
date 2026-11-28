@@ -178,7 +178,7 @@ const ICO = {
   groupe: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><circle cx="17" cy="9" r="2.6"/><path d="M16.5 14.2c2.6.1 4.3 1.8 5 4.8"/></svg>`,
 };
 function coquille() {
-  document.body.insertAdjacentHTML("afterbegin", `<header class="top"><a class="logo" href="#"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="8" fill="#167a52"/><g transform="rotate(-10 16 16)"><rect x="7" y="7" width="13" height="18" rx="2" fill="#fff"/><text x="13.5" y="20" text-anchor="middle" font-size="10" fill="#d7263d">♥</text></g><circle cx="23" cy="22" r="4" fill="#ffcf33"/></svg>La Donne</a><span class="grp" id="grpNom"></span><button type="button" class="hai-porte-btn" data-hai-porte aria-label="Mon compte (Albert, L’Établi)" title="Mon compte"></button></header>`);
+  document.body.insertAdjacentHTML("afterbegin", `<header class="top"><a class="logo" href="#"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="8" fill="#167a52"/><g transform="rotate(-10 16 16)"><rect x="7" y="7" width="13" height="18" rx="2" fill="#fff"/><text x="13.5" y="20" text-anchor="middle" font-size="10" fill="#d7263d">♥</text></g><circle cx="23" cy="22" r="4" fill="#ffcf33"/></svg>La Donne</a><span class="grp" id="grpNom"></span><button type="button" class="hai-porte-btn" data-hai-porte aria-label="Mon compte (Philippe, L’Établi)" title="Mon compte"></button></header>`);
   document.body.insertAdjacentHTML("beforeend", `<nav class="tabs" aria-label="Sections"><a href="#" data-tab="jeux">${ICO.jeux}<span>Jeux</span></a><a href="#soirees" data-tab="soirees"><span class="pt">${ICO.soirees}<i id="badge" hidden></i></span><span>Soirées</span></a><a href="#groupe" data-tab="groupe">${ICO.groupe}<span>Groupe</span></a></nav>`);
 }
 function majOnglets() {
@@ -455,7 +455,7 @@ function ecranGroupe() {
   <form class="sec form edit" id="fmoi"><h2>Votre nom dans le groupe</h2><div class="row"><input id="mn" maxlength="30" value="${esc((moiJoueur() || { data: {} }).data.nom || "")}" aria-label="Votre prénom"><button>Enregistrer</button></div><p></p></form>
   ${autres.length ? `<section class="sec"><h2>Vos autres groupes</h2><div class="people">${autres.map((c) => `<div class="person"><span class="ini">${esc(initiales((c.groupe || {}).nom))}</span><span class="nm"><b>${esc((c.groupe || {}).nom || "Groupe")}</b></span><span class="act"><button class="btn sm go" data-act="relier" data-id="${esc(c.player_id)}">Ouvrir</button></span></div>`).join("")}</div></section>` : ""}
   <p><button class="btn ghost" data-act="nouveau-groupe">Créer un autre groupe</button> <button class="btn ghost" type="button" data-hai-inviter>Inviter quelqu'un</button></p>
-  <p class="note">Connecté avec le ${esc(telAffiche(S.session.phone))}. Pour changer de compte, touchez le bouton d'Albert en haut à droite.</p>
+  <p class="note">Connecté avec le ${esc(telAffiche(S.session.phone))}. Pour changer de compte, touchez le bouton de Philippe en haut à droite.</p>
   </div></div>`;
   S.nouveauJoueur = null;
 }
@@ -573,7 +573,7 @@ addEventListener("hashchange", () => route());
   route();
   const jeuxP = chargerJeux().then(() => { const h = location.hash.slice(1); if (!h || h.startsWith("u-")) route(true); });
   let r = { session: null };
-  // Norme commune HoldingAI : compte obligatoire dans toutes les apps; sans session, la barrière d'Albert (porte.js)
+  // Norme commune HoldingAI : compte obligatoire dans toutes les apps; sans session, la barrière de Philippe (porte.js)
   try { r = await HoldingAI.demarrer({ obligatoire: true }); } catch (e) { r = { session: null, erreur: e }; }
   if (r.redirection) return;
   S.session = r.session;
