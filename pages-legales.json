@@ -1,0 +1,45 @@
+{
+  "nom": "La Donne",
+  "deNom": "de La Donne",
+  "leNom": "La Donne",
+  "courriel": "bonjour@ladonne.ai",
+  "app": "https://app.ladonne.ai/",
+  "accueil": "./",
+  "symbole": "symbole.svg",
+  "marque": "#2A48A0",
+  "douce": "#E1E5F2",
+  "police": "Outfit, system-ui, sans-serif",
+  "policeGoogle": "Outfit:wght@700",
+  "unite": "groupe",
+  "organisateurs": true,
+  "textos": true,
+  "prixPayant": false,
+  "recueil": [
+    "Pour lire les règles : rien. Les règles sont ouvertes à tous, sans compte.",
+    "Membres d’un groupe : prénom et numéro de cellulaire (pour l’invitation par texto et la connexion).",
+    "Soirées : dates proposées, lieu, jeux au programme et réponses de chacun.",
+    "Règles partagées : le texte des règles que vous publiez, avec votre nom d’auteur.",
+    "Le carnet de points reste sur votre appareil : il ne nous est pas envoyé."
+  ],
+  "pourquoi": [
+    "Faire fonctionner l’app pour votre groupe : connexion, invitations, soirées et réponses.",
+    "Afficher les règles partagées par les joueurs.",
+    "Répondre à vos demandes."
+  ],
+  "fournisseurs": "Supabase (hébergement de la base de données, au Canada) et le compte L’Établi (connexion)",
+  "conservation": "Les renseignements d’un groupe sont conservés tant que le groupe existe. Une règle partagée reste publiée jusqu’à ce que son auteur la supprime.",
+  "service": "La Donne est une application web qui explique les règles de jeux de cartes, de dominos, de dés et de société, et aide un groupe d’amis à organiser ses soirées de jeux.",
+  "formules": [
+    "La Donne est gratuite pendant le lancement."
+  ],
+  "prix": [
+    "Toutes les fonctions sont gratuites pendant le lancement.",
+    "Si un forfait payant s’ajoute, il sera annoncé avant. Rien ne sera facturé sans votre accord."
+  ],
+  "remboursement": "Aucun achat n’est possible pour l’instant. Les conditions de remboursement seront précisées ici avant le lancement d’un forfait payant.",
+  "particularite": {
+    "titre": "Les règles que vous partagez",
+    "texte": "Les règles que vous partagez doivent être écrites par vous ou résumées dans vos mots. Ne copiez pas le livret d’un éditeur. Elles sont visibles par tous ; vous seul pouvez les modifier ou les supprimer. Nous pouvons retirer une règle qui ne respecte pas ces conditions."
+  },
+  "exactitude": "Les règles sont résumées pour être apprises vite : en cas de doute, le livret officiel du jeu a le dernier mot."
+}
